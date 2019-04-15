@@ -1,0 +1,125 @@
+2019-04-13 16:32:53 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "TBL_CLIENTE" no encontrada
+Table "TBL_CLIENTE" not found; SQL statement:
+select * from tbl_cliente [42102-192]
+2019-04-13 16:33:52 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE TABLE IF NOT EXISTS ""TBL_CLIENTE"" (
+	""IDCLIENTE""	INTEGER PRIMARY KEY AUTOINCREMENT[*],
+	""NOMBRE""	VARCHAR ( 50 ),
+	""CEDULA""	INT ( 20 ),
+	""DIRECCION""	VARCHAR ( 50 ),
+	""TELEFONO""	INT ( 20 ) NOT NULL,
+	CONSTRAINT ""CONSTRAINT_NAME"" UNIQUE(""CEDULA"")
+) "; se esperaba "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS ""TBL_CLIENTE"" (
+	""IDCLIENTE""	INTEGER PRIMARY KEY AUTOINCREMENT[*],
+	""NOMBRE""	VARCHAR ( 50 ),
+	""CEDULA""	INT ( 20 ),
+	""DIRECCION""	VARCHAR ( 50 ),
+	""TELEFONO""	INT ( 20 ) NOT NULL,
+	CONSTRAINT ""CONSTRAINT_NAME"" UNIQUE(""CEDULA"")
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS `tbl_cliente` (
+	`idcliente`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`nombre`	varchar ( 50 ),
+	`cedula`	int ( 20 ),
+	`direccion`	varchar ( 50 ),
+	`telefono`	int ( 20 ) NOT NULL,
+	CONSTRAINT `constraint_name` UNIQUE(`cedula`)
+) [42001-192]
+2019-04-13 17:19:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO `tbl_cliente` VALUES ('jhon',123456,'cali',345678998) [21002-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.executeSQLStatement(SQLExecutionHelper.java:865)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.access$500(SQLExecutionHelper.java:84)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper$1Loader.run(SQLExecutionHelper.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1443)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:68)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:303)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2058)
+2019-04-13 17:19:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO `tbl_cliente` VALUES ('duvan',NULL,'cali',1111) [21002-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.executeSQLStatement(SQLExecutionHelper.java:865)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.access$500(SQLExecutionHelper.java:84)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper$1Loader.run(SQLExecutionHelper.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1443)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:68)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:303)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2058)
+2019-04-13 17:19:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO `tbl_cliente` VALUES ('duvan',1111,'cali',2222) [21002-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.executeSQLStatement(SQLExecutionHelper.java:865)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.access$500(SQLExecutionHelper.java:84)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper$1Loader.run(SQLExecutionHelper.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1443)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:68)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:303)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2058)
+2019-04-13 17:19:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO tbl_cliente VALUES ('jhon',123456,'cali',345678998) [21002-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.executeSQLStatement(SQLExecutionHelper.java:865)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper.access$500(SQLExecutionHelper.java:84)
+	at org.netbeans.modules.db.dataview.output.SQLExecutionHelper$1Loader.run(SQLExecutionHelper.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1443)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:68)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:303)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2058)
